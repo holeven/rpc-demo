@@ -11,6 +11,9 @@ import lombok.Data;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 客户端配置
+ */
 @Data
 public class RpcClientConfig {
 

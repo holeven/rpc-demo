@@ -9,14 +9,14 @@ import com.gk.rpc.transport.http.HttpTransportServer;
 import lombok.Data;
 
 /**
- * server 配置
+ * server配置类
  */
 @Data
 public class RpcServerConfig {
 
-    private Class<? extends TransportServer> transportServerClass = HttpTransportServer.class;
+    private Class<? extends TransportServer> transportServerClass = HttpTransportServer.class; //走http方式进行通讯
 
-    private Class<? extends Encoder> jsonEncoderClass = JsonEncode.class;
+    private Class<? extends Encoder> jsonEncoderClass = JsonEncode.class; //json方式处理数据
 
     private Class<? extends Decoder> jsonDecoderClass = JsonDecode.class;
 

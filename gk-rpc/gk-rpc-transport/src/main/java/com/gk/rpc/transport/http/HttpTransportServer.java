@@ -21,11 +21,11 @@ public class HttpTransportServer implements TransportServer {
     @Override
     public void init(int port, RequestHandle requestHandle) {
         this.requestHandle = requestHandle;
-        this.server = new Server(port);
+        this.server = new Server(port); //init jetty server
         ServletContextHandler ctx = new ServletContextHandler();
-        server.setHandler(ctx);
         ServletHolder holder = new ServletHolder(new RequestServlet(this.requestHandle));
         ctx.addServlet(holder, "/*");
+        server.setHandler(ctx);
 
     }
 

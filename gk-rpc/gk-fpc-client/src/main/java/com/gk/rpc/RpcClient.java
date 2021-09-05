@@ -29,6 +29,7 @@ public class RpcClient {
         this.selector = ReflectionUtils.newInstance(rpcClientConfig.getSelectorClass());
         this.clientConfig = rpcClientConfig;
 
+        //初始化客户端连接服务端配置信息
         this.selector.init(
                 this.clientConfig.getServers(),
                 this.clientConfig.getConnectionCount(),

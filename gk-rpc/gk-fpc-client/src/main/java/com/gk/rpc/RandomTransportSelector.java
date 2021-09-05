@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 随机传输选择器
+ * 负责决定客户端
+ */
 @Slf4j
 public class RandomTransportSelector implements TransportSelector {
 

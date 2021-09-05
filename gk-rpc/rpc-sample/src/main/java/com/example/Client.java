@@ -3,6 +3,9 @@ package com.example;
 import com.gk.rpc.RpcClient;
 import com.gk.rpc.RpcClientConfig;
 
+/**
+ * 客户端测试
+ */
 public class Client {
     public static void main(String[] args) {
         RpcClient client = new RpcClient(new RpcClientConfig());

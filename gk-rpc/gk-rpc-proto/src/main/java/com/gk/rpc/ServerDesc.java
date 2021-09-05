@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
- *  服务类子数据
+ *  服务描述
  */
 @Data
 @AllArgsConstructor
@@ -18,7 +18,7 @@ public class ServerDesc {
     private String clazz;
     private String method;
     private String returnType;
-    private String[] parameterTypes;
+    private Object[] parameterTypes;
 
     /**
      *
@@ -30,13 +30,7 @@ public class ServerDesc {
         ServerDesc serverDesc = new ServerDesc();
         serverDesc.setClazz(clazz.getName());
         serverDesc.setMethod(method.getName());
-//        serverDesc.setParameterTypes(Arrays.stream(method.getParameterTypes()).map(Class::getName).toArray());
-        String[] parameterTypes = new String[method.getParameterTypes().length];
-        for(int i =0;i<method.getParameterTypes().length;i++){
-            parameterTypes[i] = method.getParameterTypes()[i].getName();
-        }
-        serverDesc.setParameterTypes(parameterTypes);
-
+        serverDesc.setParameterTypes(Arrays.stream(method.getParameterTypes()).map(Class::getName).toArray());
         serverDesc.setReturnType(method.getReturnType().getName());
         return serverDesc;
     }
